@@ -1,0 +1,6 @@
+export const ADMIN_HOME_PATH = '/admin'
+export const ADMIN_ORDER_MANAGER_PATH = ADMIN_HOME_PATH + '/order'
+export const ADMIN_PARTNER_PATH = ADMIN_HOME_PATH + '/partner'
+export const ADMIN_CUSTOMER_PATH = ADMIN_HOME_PATH + '/customer'
+export const ADMIN_STATISTIC_PATH = ADMIN_HOME_PATH + '/statistic'
+export const ADMIN_ACCOUNT_SETTING_PATH = ADMIN_HOME_PATH + '/account'

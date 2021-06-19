@@ -1,0 +1,11 @@
+export const USER_HOME_PATH = '/user'
+export const USER_CREATE_SHIPMENT_PATH = USER_HOME_PATH + '/create'
+export const USER_ORDER_MANAGER_PATH = USER_HOME_PATH + '/order'
+export const USER_NOTIFICATION_PATH = USER_HOME_PATH + '/notification'
+export const USER_FEE_CALCULATION_PATH = USER_HOME_PATH + '/fee'
+export const USER_ACCOUNT_SETTING_PATH = USER_HOME_PATH + '/account'
+// account setting
+export const USER_PROFILE_SETTING_PATH = USER_ACCOUNT_SETTING_PATH + '/profile'
+export const USER_CHANGE_PASSWORD_PATH = USER_ACCOUNT_SETTING_PATH + '/password'
+export const USER_ADDRESS_SETTING_PATH = USER_ACCOUNT_SETTING_PATH + '/address'
+export const USER_PAYMENT_SETTING_PATH = USER_ACCOUNT_SETTING_PATH + '/payment' 

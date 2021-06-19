@@ -1,0 +1,117 @@
+html,
+body {
+  min-height: 100%;
+  font-family: "Cabin", ui-sans-serif, sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  height: 100%;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-exit-active {
+  transition: opacity 300ms;
+}
+
+.text-stroke {
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+}
+
+.rotate-y-0 {
+  transform: rotateY(0deg);
+}
+
+.-rotate-y-90 {
+  transform: rotateY(90deg);
+}
+
+.rotate-y-90 {
+  transform: rotateY(90deg);
+}
+
+.page-enter {
+  opacity: 0;
+}
+
+.page-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.page-exit-active {
+  display: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:active,
+input:focus {
+  @apply outline-none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+.__react_component_tooltip {
+  padding: 1px 3px !important;
+  margin-left: 8px !important;
+}
+
+.__react_component_tooltip::after,
+.__react_component_tooltip::before {
+  content: none !important;
+}
+
+.input {
+  border-color: #e5e7eb;
+  @apply border bg-user-100 focus:outline-none focus:border-blue-300 focus-within:border-blue-300 transition-colors text-gray-600;
+}
+
+.input.error {
+  @apply border-red-500 text-red-500 placeholder-red-500;
+}
+
+.transition-max-h {
+  transition: max-height 0.25s ease-in-out;
+}
+
+.ReactCollapse--collapse {
+  transition: height 300ms;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}

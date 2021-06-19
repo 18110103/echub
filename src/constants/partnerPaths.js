@@ -1,0 +1,6 @@
+export const PARTNER_HOME_PATH = '/partner'
+export const PARTNER_ORDER_MANAGER_PATH = PARTNER_HOME_PATH + '/order'
+export const PARTNER_POLICY_PATH = PARTNER_HOME_PATH + '/policy'
+export const PARTNER_CUSTOMER_PATH = PARTNER_HOME_PATH + '/customer'
+export const PARTNER_STATISTIC_PATH = PARTNER_HOME_PATH + '/statistic'
+export const PARTNER_ACCOUNT_SETTING_PATH = PARTNER_HOME_PATH + '/account'
