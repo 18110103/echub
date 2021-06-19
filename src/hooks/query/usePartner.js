@@ -9,7 +9,7 @@ const partnerContext = createContext({
 
 const useProvidePartner = () => {
     const [isLoading, setLoading] = useState(false)
-    const [currentCompany, setCurrentCompany] = useState("asdasd")
+    const [currentCompany, setCurrentCompany] = useState("grab")
     const [data, setData] = useState(null)
 
     useEffect(() => {

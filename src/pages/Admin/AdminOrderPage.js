@@ -45,8 +45,7 @@ const AdminOrderPage = () => {
     }
 	const [data, setData] = useState(null)
 	
-	useEffect(() => {
-        const fetchData = async () => {
+	const fetchData = async () => {
             try {
                 const res = await axios.get('http://localhost:57832/api/Bills')
                 setData(res.data)
@@ -55,6 +54,9 @@ const AdminOrderPage = () => {
                 alert(err.message)
             }
         }
+	
+	useEffect(() => {
+        
         fetchData()
     })
 	
@@ -70,8 +72,10 @@ const AdminOrderPage = () => {
         }
     }, {
         name: "Xóa",
-        onClick: () => {
+        onClick: async (data) => {
+            await axios.delete('http://localhost:57832/api/Bills/' + data.idBill)
             alert("Ok")
+            fetchData()
         }
     }
 	, {

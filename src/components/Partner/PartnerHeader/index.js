@@ -9,7 +9,7 @@ const PartnerHeader = () => {
     flex-shrink-0 z-10 sticky bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 top-0">
         <div className="flex items-center">
             <div className="text-sm space-x-4 mr-2">
-                <button onClick={() => setCurrentCompany('asdasd')}>Grab</button>
+                <button onClick={() => setCurrentCompany('grab')}>Grab</button>
                 <button onClick={() => setCurrentCompany('ghn')}>GHN</button>
                 <button onClick={() => setCurrentCompany('ghtk')}>GHTK</button>
             </div>

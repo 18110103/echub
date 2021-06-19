@@ -33,6 +33,7 @@ function App() {
       </Route>
       <Route path="/">
         <div>
+          <div className="fixed right-0 bottom-0 bg-black">Facebook</div>
           <Header />
           <main>
             <Switch>

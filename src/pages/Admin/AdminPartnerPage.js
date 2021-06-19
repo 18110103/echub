@@ -55,8 +55,7 @@ const AdminPartnerPage = () => {
     }
 	const [data, setData] = useState(null)
 	
-	useEffect(() => {
-        const fetchData = async () => {
+	const fetchData = async () => {
             try {
                 const res = await axios.get('http://localhost:57832/api/ShipCompanies')
                 setData(res.data)
@@ -65,6 +64,9 @@ const AdminPartnerPage = () => {
                 alert(err.message)
             }
         }
+	
+	useEffect(() => {
+        
         fetchData()
     })
 	
@@ -80,8 +82,10 @@ const AdminPartnerPage = () => {
         }
     }, {
         name: "Xóa",
-        onClick: () => {
+        onClick: async (data) => {
+            await axios.delete('http://localhost:57832/api/ShipCompanies/' + data.idCompany)
             alert("Ok")
+            fetchData()
         }
     }
 	, {

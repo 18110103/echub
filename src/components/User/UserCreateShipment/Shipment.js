@@ -5,7 +5,7 @@ import UserSectionHeading from "../common/UserSectionHeading"
 import numberWithCommas from "../../../util/numberWithCommas"
 import { useFormContext } from "react-hook-form"
 import classNames from 'classnames'
-import Loading from "../../common/Loading"
+import Loading, { LoadingIcon } from "../../common/Loading"
 import getBrandImage from "../../../utils/getBrandImage"
 
 const Shipment = ({ shippingList, loading, setFee }) => {
@@ -60,10 +60,15 @@ const Shipment = ({ shippingList, loading, setFee }) => {
         return (
             <UserSectionContainer>
                 <UserSectionHeading>DANH SÁCH ĐƠN VỊ VẬN CHUYỂN</UserSectionHeading>
-                <div className="p-5 text-center text-xl font-bold max-w-xl mx-auto
-            text-gray-500">
-                    Nhập đầy đủ thông tin để lấy danh sách các đơn vị vận chuyển
-                </div>
+                {loading ?
+                    <div className="flex-center h-20">
+                        <LoadingIcon />
+                    </div> :
+                    <div className="p-5 text-center text-xl font-bold max-w-xl mx-auto
+                    text-gray-500">
+                        Nhập đầy đủ thông tin để lấy danh sách các đơn vị vận chuyển
+                    </div>
+                }
             </UserSectionContainer>
         )
     }
@@ -71,8 +76,8 @@ const Shipment = ({ shippingList, loading, setFee }) => {
     return <UserSectionContainer>
         <UserSectionHeading>DANH SÁCH ĐƠN VỊ VẬN CHUYỂN</UserSectionHeading>
         {loading ?
-            <div className="relative h-40">
-                <Loading />
+            <div className="flex-center h-20">
+                <LoadingIcon />
             </div> :
             data.length === 0 ? (
                 <div className="text-center">

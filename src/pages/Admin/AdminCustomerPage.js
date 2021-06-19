@@ -59,8 +59,7 @@ const AdminCustomerPage = () => {
 	
 	const [data, setData] = useState(null)
 	
-	useEffect(() => {
-        const fetchData = async () => {
+	const fetchData = async () => {
             try {
                 const res = await axios.get('http://localhost:57832/api/Users')
                 setData(res.data)
@@ -69,6 +68,9 @@ const AdminCustomerPage = () => {
                 alert(err.message)
             }
         }
+	
+	useEffect(() => {
+        
         fetchData()
     })
 	
@@ -84,8 +86,10 @@ const AdminCustomerPage = () => {
         }
     }, {
         name: "Xóa",
-        onClick: () => {
+        onClick: async (data) => {
+            await axios.delete('http://localhost:57832/api/Users/' + data.idUser)
             alert("Ok")
+            fetchData()
         }
     }
 	, {

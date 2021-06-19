@@ -72,7 +72,11 @@ const ReceiverForm = () => {
                                 placeholder="Tỉnh/Thành phố"
                                 data={provinceData}
                                 getOptionLabel={option => option.provinceName}
-                                setData={setProvince}
+                                setData={(v) => {
+                                    setDistrict(null)
+                                    setWard(null)
+                                    setProvince(v)
+                                }}
                                 error={errors?.province?.message}
                             />
                         </div>
@@ -82,7 +86,10 @@ const ReceiverForm = () => {
                                 placeholder="Huyện/Quận"
                                 data={filterDistrict}
                                 getOptionLabel={option => option.districtName}
-                                setData={setDistrict}
+                                setData={(v) => {
+                                    setWard(null)
+                                    setDistrict(v)
+                                }}
                                 error={errors?.district?.message}
                             />
                         </div>

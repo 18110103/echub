@@ -43,8 +43,10 @@ const PartnerOrderPage = () => {
         }
     }, {
         name: "Xóa",
-        onClick: () => {
+        onClick: async (data) => {
+            await axios.delete('http://localhost:57832/api/Bills/' + data.idBill)
             alert("Ok")
+            fetchData()
         }
     }]
 
@@ -52,16 +54,16 @@ const PartnerOrderPage = () => {
     const { data: partnerData, currentPartner } = usePartner()
     console.log(partnerData)
 
+    const fetchData = async () => {
+        try {
+            const res = await axios.get('http://localhost:57832/api/Bills?companyId=' + partnerData.idCompany)
+            setData(res.data.map(data => ({ ...data, status: data.shippingDone ? "Đã giao" : "Chưa giao" })))
+        } catch (err) {
+            alert(err.message)
+        }
+    }
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get('http://localhost:57832/api/Bills?companyId=' + partnerData.idCompany)
-                setData(res.data.map(data => ({ ...data, status: data.shippingDone ? "Đã giao" : "Chưa giao" })))
-            } catch (err) {
-                alert(err.message)
-            }
-        }
         fetchData()
     }, [partnerData, currentPartner])
 
