@@ -5,6 +5,7 @@ import { FaTruck } from "react-icons/fa"
 import classNames from "classnames"
 import { userRoutes } from "../../../pages/User"
 import Logo from "../../common/Logo"
+import { AiOutlineHome } from "react-icons/ai"
 
 const UserSidebar = () => {
     const [expand, setExpand] = useState(true)
@@ -20,6 +21,7 @@ const UserSidebar = () => {
             })} />
         </div>
         <div className={`${expand ? "mt-8 " : ""}flex-1 transition-all overflow-x-hidden overflow-y-auto hide-scrollbar`}>
+            <SidebarLink expand={expand} exact={true} icon={AiOutlineHome} path="/" name="Trang chủ" />
             {userRoutes.map(route => <SidebarLink expand={expand} {...route} />)}
         </div>
         <div className="h-12 border-t flex-shrink-0">

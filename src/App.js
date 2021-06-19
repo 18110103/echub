@@ -7,7 +7,6 @@ import Homepage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import UserPage from "./pages/User";
-import { adminPaths } from './constants/paths';
 import AdminPage from './pages/Admin';
 import { ADMIN_HOME_PATH } from "./constants/adminPaths";
 import { PARTNER_HOME_PATH } from "./constants/partnerPaths";
@@ -33,7 +32,6 @@ function App() {
       </Route>
       <Route path="/">
         <div>
-          <div className="fixed right-0 bottom-0 bg-black">Facebook</div>
           <Header />
           <main>
             <Switch>

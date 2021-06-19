@@ -48,8 +48,6 @@ const cols = [{
 }]
 
 
-
-
 const AdminCustomerPage = () => {
     const [isOpen, setIsOpen] = useState(false)
 

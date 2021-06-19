@@ -1,4 +1,4 @@
-import { Route, Switch, useLocation } from "react-router"
+import { Redirect, Route, Switch, useLocation } from "react-router"
 import { USER_ACCOUNT_SETTING_PATH, USER_CREATE_SHIPMENT_PATH, USER_FEE_CALCULATION_PATH, USER_HOME_PATH, USER_NOTIFICATION_PATH, USER_ORDER_MANAGER_PATH } from "../../constants/userPaths"
 import { AiOutlineHome } from 'react-icons/ai'
 import { BiPackage } from 'react-icons/bi'
@@ -19,46 +19,48 @@ import { LoadingIcon } from "../../components/common/Loading"
 import useUser from "../../hooks/query/useUser"
 
 
-export const userRoutes = [{
-    path: USER_HOME_PATH,
-    name: "Trang chủ",
-    icon: AiOutlineHome,
-    component: <div>Trang chủ</div>,
-    exact: true
-}, {
-    path: USER_CREATE_SHIPMENT_PATH,
-    name: "Tạo đơn",
-    icon: BiPackage,
-    component: <UserCreateShipmentPage />,
-    exact: true
-}, {
-    path: USER_ORDER_MANAGER_PATH,
-    name: "Quản lý đơn hàng",
-    icon: IoDocumentTextOutline,
-    component: <UserOrderPage />,
-    exact: false
-},
-// {
-//     path: USER_NOTIFICATION_PATH,
-//     name: "Thông báo",
-//     icon: IoMdNotificationsOutline,
-//     component: <UserNotificationPage />,
-//     exact: true
-// },
-{
-    path: USER_FEE_CALCULATION_PATH,
-    name: "Tính phí vận chuyển",
-    icon: IoPricetagOutline,
-    component: <UserFeeCalculatorPage />,
-    exact: true
-},
-{
-    path: USER_ACCOUNT_SETTING_PATH,
-    name: "Cài đặt tài khoản",
-    icon: IoSettingsOutline,
-    component: <UserAccountSettingPage />,
-    exact: false
-}]
+export const userRoutes = [
+    // {
+    //     path: USER_HOME_PATH,
+    //     name: "Trang chủ",
+    //     icon: AiOutlineHome,
+    //     component: <Redirect to="/" />,
+    //     exact: true
+    // },
+    {
+        path: USER_CREATE_SHIPMENT_PATH,
+        name: "Tạo đơn",
+        icon: BiPackage,
+        component: <UserCreateShipmentPage />,
+        exact: true
+    }, {
+        path: USER_ORDER_MANAGER_PATH,
+        name: "Quản lý đơn hàng",
+        icon: IoDocumentTextOutline,
+        component: <UserOrderPage />,
+        exact: false
+    },
+    // {
+    //     path: USER_NOTIFICATION_PATH,
+    //     name: "Thông báo",
+    //     icon: IoMdNotificationsOutline,
+    //     component: <UserNotificationPage />,
+    //     exact: true
+    // },
+    {
+        path: USER_FEE_CALCULATION_PATH,
+        name: "Tính phí vận chuyển",
+        icon: IoPricetagOutline,
+        component: <UserFeeCalculatorPage />,
+        exact: true
+    },
+    {
+        path: USER_ACCOUNT_SETTING_PATH,
+        name: "Cài đặt tài khoản",
+        icon: IoSettingsOutline,
+        component: <UserAccountSettingPage />,
+        exact: false
+    }]
 
 const UserPage = () => {
     const location = useLocation()
@@ -69,6 +71,12 @@ const UserPage = () => {
 
     if (provinceLoading || districtLoading || wardLoading || userLoading) {
         return (<div className="inset-0 absolute flex-center"><LoadingIcon /></div>)
+    }
+
+    console.log(location)
+
+    if (location.pathname === '/user') {
+        return <Redirect to="/user/create" />
     }
 
     return (
@@ -87,6 +95,9 @@ const UserPage = () => {
                                 </Route>
                             )
                         })}
+                        <Route>
+                            <Redirect to="/user/create" />
+                        </Route>
                     </Switch>
                 </main>
             </div>

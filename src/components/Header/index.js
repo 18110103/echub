@@ -5,16 +5,15 @@ import Logo from "../common/Logo"
 
 const Header = () => {
     const pricingDropdown = [
-        { title: "Tính cước vận chuyển", path: "/bang-gia/calculation" },
+        { title: "Tính cước vận chuyển", path: "/user/fee" },
         { title: "Biểu phí", path: "/pricing" },
         { title: "Chiết khấu", path: "/asvdfd" }
     ]
 
     const featuresDropdown = [
-        { title: "Tổng quan", path: "/bfgb" },
-        { title: "Quản lý vận đơn", path: "/xc" },
-        { title: "Quản lý khách hàng", path: "/asvdfd" },
-        { title: "Quản lý tiền thu hộ", path: "/vfds" },
+        { title: "Khách hàng", path: "/user" },
+        { title: "Đối tác", path: "/partner" },
+        { title: "Admin", path: "/admin" },
     ]
 
     const liClasses = "group h-full p-2 inline-block text-gray-500 transition-all " +
@@ -57,7 +56,7 @@ const Header = () => {
                 <ul className="px-3 py-4">
                     <HeaderLinkWithClasses to="/" exact>Trang chủ</HeaderLinkWithClasses>
                     <HeaderDropdownWithClasses data={pricingDropdown}>Bảng giá</HeaderDropdownWithClasses>
-                    <HeaderDropdownWithClasses data={featuresDropdown}>Tính năng</HeaderDropdownWithClasses>
+                    <HeaderDropdownWithClasses data={featuresDropdown}>Truy cập nhanh</HeaderDropdownWithClasses>
                     <HeaderLinkWithClasses to="/faq">FAQ</HeaderLinkWithClasses>
                     <HeaderLinkWithClasses to="/about">Về chúng tôi</HeaderLinkWithClasses>
                 </ul>

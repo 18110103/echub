@@ -2,7 +2,7 @@ import { useState } from "react"
 import { AiOutlineHome, AiOutlinePieChart, AiOutlineSetting, AiOutlineUser } from "react-icons/ai"
 import { BiPackage } from "react-icons/bi"
 import { BsBook } from "react-icons/bs"
-import { Route, Switch, useLocation } from "react-router"
+import { Redirect, Route, Switch, useLocation } from "react-router"
 import { LoadingIcon } from "../../components/common/Loading"
 import PartnerHeader from "../../components/Partner/PartnerHeader"
 import PartnerSidebar from "../../components/Partner/PartnerSidebar"
@@ -14,46 +14,48 @@ import PartnerPolicyPage from "./PartnerPolicyPage"
 import PartnerSettingPage from "./PartnerSettingPage"
 import PartnerStatisticPage from "./PartnerStatisticPage"
 
-export const partnerRoutes = [{
-    path: PARTNER_HOME_PATH,
-    name: "Trang chủ",
-    icon: AiOutlineHome,
-    component: <div>Trang chủ</div>,
-    exact: true
-}, {
-    path: PARTNER_ORDER_MANAGER_PATH,
-    name: "Đơn hàng",
-    icon: BiPackage,
-    component: <PartnerOrderPage />,
-    exact: true
-}, {
-    path: PARTNER_POLICY_PATH,
-    name: "Chính sách",
-    icon: BsBook,
-    component: <PartnerPolicyPage />,
-    exact: true
-},
-// {
-//     path: PARTNER_CUSTOMER_PATH,
-//     name: "Khách hàng",
-//     icon: AiOutlineUser,
-//     component: <PartnerCustomerPage />,
-//     exact: true
-// }
-// , {
-//     path: PARTNER_STATISTIC_PATH,
-//     name: "Thống kê",
-//     icon: AiOutlinePieChart,
-//     component: <PartnerStatisticPage />,
-//     exact: true
-// }, 
-{
-    path: PARTNER_ACCOUNT_SETTING_PATH,
-    name: "Cài đặt tài khoản",
-    icon: AiOutlineSetting,
-    component: <PartnerSettingPage />,
-    exact: true
-},]
+export const partnerRoutes = [
+    // {
+    //     path: PARTNER_HOME_PATH,
+    //     name: "Trang chủ",
+    //     icon: AiOutlineHome,
+    //     component: <div>Trang chủ</div>,
+    //     exact: true
+    // },
+    {
+        path: PARTNER_ORDER_MANAGER_PATH,
+        name: "Đơn hàng",
+        icon: BiPackage,
+        component: <PartnerOrderPage />,
+        exact: true
+    }, {
+        path: PARTNER_POLICY_PATH,
+        name: "Chính sách",
+        icon: BsBook,
+        component: <PartnerPolicyPage />,
+        exact: true
+    },
+    // {
+    //     path: PARTNER_CUSTOMER_PATH,
+    //     name: "Khách hàng",
+    //     icon: AiOutlineUser,
+    //     component: <PartnerCustomerPage />,
+    //     exact: true
+    // }
+    // , {
+    //     path: PARTNER_STATISTIC_PATH,
+    //     name: "Thống kê",
+    //     icon: AiOutlinePieChart,
+    //     component: <PartnerStatisticPage />,
+    //     exact: true
+    // }, 
+    {
+        path: PARTNER_ACCOUNT_SETTING_PATH,
+        name: "Cài đặt tài khoản",
+        icon: AiOutlineSetting,
+        component: <PartnerSettingPage />,
+        exact: true
+    },]
 
 const PartnerPage = () => {
     const location = useLocation()
@@ -79,6 +81,9 @@ const PartnerPage = () => {
                                 </Route>
                             )
                         })}
+                        <Route>
+                            <Redirect to={PARTNER_ORDER_MANAGER_PATH}/>
+                        </Route>
                     </Switch>
                 </main>
             </div>

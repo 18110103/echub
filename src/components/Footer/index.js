@@ -51,16 +51,21 @@ const Footer = () => {
                         <li className="mb-2"><a href="/" >Góp ý sản phẩm dịch vụ</a></li>
                     </ul>
                 </div>
-                <div className="lg:w-2/5 mx-2 md:mx-5 text-center">
+                <div className="lg:w-4/5 mx-2 md:mx-5 text-center">
                     <Heading>HỖ TRỢ</Heading>
                     <div><FcAssistant className="inline" size="90px" /></div>
                     <div className="text-2xl font-medium">19008095</div>
                     <div>Liên hệ hotline từ: 7:00-21:00</div>
+                    <div className="flex mt-2">
+                        <iframe title="facebook" src={`https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=280&height=350&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`} width="240" height="250" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                        </iframe>
+                        <a class="twitter-timeline" data-width="280" data-height="250" data-theme="light" href="https://twitter.com/B008Ec18?ref_src=twsrc%5Etfw">Tweets by B008Ec18</a>
+                    </div>
                 </div>
             </div>
             <div className="text-center border-t p-3 font-medium border-white border-opacity-30">
                 Copyright © LEC HUB 2021. All rights reserved.
-        </div>
+            </div>
         </div>
     </>
 }
