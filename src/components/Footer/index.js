@@ -56,8 +56,19 @@ const Footer = () => {
                     <div><FcAssistant className="inline" size="90px" /></div>
                     <div className="text-2xl font-medium">19008095</div>
                     <div>Liên hệ hotline từ: 7:00-21:00</div>
+                    <div id="mc_embed_signup">
+                        <form action="https://hcmute.us6.list-manage.com/subscribe/post?u=2ff51e67e0e9b28def7e944b4&amp;id=697577bbc1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <label for="mce-EMAIL">Subscribe</label>
+                                <input type="email" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required />
+                                <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true"><input type="text" name="b_2ff51e67e0e9b28def7e944b4_697577bbc1" tabindex="-1" value="" /></div>
+                                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" /></div>
+                            </div>
+                        </form>
+                    </div>
+
                     <div className="flex mt-2">
-                        <iframe title="facebook" src={`https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=280&height=350&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`} width="240" height="250" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                        <iframe title="facebook" src={`https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100068515121662&tabs=timeline&width=240&height=250&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`} width="240" height="250" style={{ border: "none", overflow: "hidden" }} scrolling="no" frameBorder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
                         </iframe>
                         <a class="twitter-timeline" data-width="280" data-height="250" data-theme="light" href="https://twitter.com/B008Ec18?ref_src=twsrc%5Etfw">Tweets by B008Ec18</a>
                     </div>
